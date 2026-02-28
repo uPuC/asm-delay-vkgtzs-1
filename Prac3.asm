@@ -1,5 +1,4 @@
 ;------------- definiciones e includes ------------------------------
-;.INCLUDE "m1280def.inc" ; Incluir definiciones de Registros para 1280
 .INCLUDE "m2560def.inc" ; Incluir definiciones de Registros para 2560
 
 .equ k=103
@@ -15,6 +14,7 @@
 ;call delay20uS
 ;call delay4mS
 ;call delay1S
+;call Random
 ret
 
 ;call myRand ; Retorna valor en R25
@@ -60,6 +60,7 @@ clco1: ldi R25,b				; x
 			
 ; ------------- ciclo principal --------------------------------------
 
+Random:
 ldi  R25, 0xAC      ; semilla
 ldi  R26, 0xB8      ; máscara LFSR
 
